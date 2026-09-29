@@ -1,25 +1,25 @@
 alerts:
-  - name: TODO_alert_1
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: api_latency_slo_breach
+    severity: warning
+    condition: p95(latency_ms) > 3000 ms
+    duration: 5m
     type: symptom-based
-    channel: slack
-    owner: TODO
-    runbook: docs/alerts.md#alert-1
-  - name: TODO_alert_2
-    severity: TODO
-    condition: TODO
-    duration: TODO
+    channel: slack:#llmops-alerts
+    owner: llmops-on-call
+    runbook: docs/alerts.md#alert-1-api-latency-slo-breach
+  - name: api_error_rate_high
+    severity: critical
+    condition: error_rate_pct > 2
+    duration: 5m
     type: symptom-based
-    channel: slack
-    owner: TODO
-    runbook: docs/alerts.md#alert-2
-  - name: TODO_alert_3
-    severity: TODO
-    condition: TODO
-    duration: TODO
+    channel: slack:#llmops-alerts
+    owner: llmops-on-call
+    runbook: docs/alerts.md#alert-2-api-error-rate-high
+  - name: retrieval_success_degraded
+    severity: warning
+    condition: retrieval_success_rate_pct < 90
+    duration: 10m
     type: symptom-based
-    channel: slack
-    owner: TODO
-    runbook: docs/alerts.md#alert-3
+    channel: slack:#llmops-alerts
+    owner: llmops-on-call
+    runbook: docs/alerts.md#alert-3-retrieval-success-degraded

@@ -7,7 +7,7 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
+  note: "Giữ ngưỡng P95 3000 ms theo dashboard contract. Với target 99.5% trong 28 ngày, error budget là 0.5% tổng request: ví dụ 100,000 request cho phép tối đa 500 request lỗi hoặc vượt 3000 ms."
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5
